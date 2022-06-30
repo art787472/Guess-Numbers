@@ -8,8 +8,8 @@ const allBtn = document.querySelectorAll("button");
 const numpadToggle = document.querySelector(".numpad-layout-switch input");
 
 let guessTime = 0;
-const answer = "5438";
-// const answer = getRandomNum();
+
+const answer = getRandomNum();
 
 document.querySelector(".ok-btn").addEventListener("click", () => {
   document.querySelector(".modal").style.display = "none";
