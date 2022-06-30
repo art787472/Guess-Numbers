@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="game-panel">
+      <div class="input-container">
+        <input id="input" type="text" required autocomplete='off' autofocus>
+        <button id='guess'>guess</button>
+        <button id='random'>random</button>
+      </div>
+  
+      <div class="keyboard-container">
+        <div class="number-1-9">
+          <div class="keyboard">1</div>
+          <div class="keyboard">2</div>
+          <div class="keyboard">3</div>
+          <div class="keyboard">4</div>
+          <div class="keyboard">5</div>
+          <div class="keyboard">6</div>
+          <div class="keyboard">7</div>
+          <div class="keyboard">8</div>
+          <div class="keyboard">9</div>
+        </div>
+        <div class="function-key">
+          <div id="back" class="keyboard"><i class="fa-solid fa-angle-left"></i></div>
+          <div class="keyboard">0</div>
+          <div id="reset" class="keyboard"><i class="fa-solid fa-delete-left"></i></div>
+        </div>
+  
+        <button id='restart' onClick="window.location.href=window.location.href">restart</button>
+      </div>
+  
+    </div>
+    <div class="info">
+      <button id="info-btn">info</button>
+      <div class="numpad-layout-switch">
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+  
+      <ul id='outcome'>
+  
+      </ul>
+  
+    </div>
+  </div>
+  
+  <div class="modal">
+    <div class="instruction">
+      <p>It's a number-guessing game.</p>
+      <p>Inputting four-digit non-repetive numbers, and you will get an outcome of "A" and "B".</p>
+      <p>Each "A" stands for "right number at right position," while each "B" stands for "right number but wrong
+        position."</p>
+      <p>For example, if the answer is "2587" and you guessed "3578," you will get "1A 2B" as the outcome.</p>
+      <p>If having no idea, you can always click on the "random" button which will generate random numbers for you.</p>
+      <p>use toggle to change the numpad to your prefered layout. </p> <button class="ok-btn">OK</button>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

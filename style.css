@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Bebas+Neue&family=Koulen&family=Montserrat:wght@300&family=Open+Sans&display=swap");
+html {
+  background-color: #f9f3ee;
+  font-family: "Koulen", cursive;
+  box-sizing: border-box;
+  padding-top: 10px;
+  color: #5c4033;
+}
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instruction {
+  width: 500px;
+  height: 300px;
+  padding: 50px;
+  background-color: #f9f3ee;
+  border-radius: 50px;
+}
+
+.wrap {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.instruction p {
+  margin-bottom: 10px;
+}
+
+.input-container {
+  width: 200px;
+  margin: 0 auto;
+}
+
+input {
+  width: 96%;
+  height: 30px;
+  margin: 0 auto 5px auto;
+
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  font-family: "Koulen", cursive;
+  font-size: 25px;
+  text-align: center;
+  caret-color: transparent;
+  cursor: default;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  display: block;
+
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: transparent;
+  margin: 0 auto;
+  cursor: pointer;
+  font-family: "Koulen", cursive;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #5c4033;
+  color: #5c4033;
+}
+
+button:hover {
+  background: #f9ceee;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.keyboard-container {
+  width: 200px;
+  margin: 0 auto;
+  /*   display: flex;
+/*   flex-direction:row-reverse; */
+  /*   justify-content: space-between;
+  flex-wrap: wrap-reverse; */
+}
+
+.number-1-9 {
+  display: flex;
+  /*   flex-direction:row-reverse; */
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+}
+
+.function-key {
+  display: flex;
+  justify-content: space-between;
+}
+
+.keyboard {
+  width: 60px;
+  height: 60px;
+  border: 0.5px solid #5c4033;
+  border-radius: 10px;
+
+  margin: 1px;
+  cursor: pointer;
+  font-size: 35px;
+  padding-top: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard:hover {
+  background: #ccf3ee;
+  transform: translateY(-2px);
+}
+
+.keyboard:active {
+  transform: translate(0);
+}
+
+#back,
+#reset {
+  padding-top: 6px;
+  border: none;
+}
+
+#back:hover,
+#reset:hover {
+  background: transparent;
+  transform: translateY(-5px);
+}
+
+#back:active,
+#reset:active {
+  transform: translate(1px);
+}
+
+.keyboard:active,
+.guessed {
+  background: #97c4b8;
+}
+
+.guessed:hover {
+  transform: translate(0);
+  background: #f9ceee;
+}
+
+.info {
+  margin-left: 30px;
+  width: 200px;
+}
+ul {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+#info-btn {
+  display: block;
+  width: 100%;
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.disabled:hover {
+  transform: translate(0);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.disappear {
+  animation: fadeOut 2s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Toggle */
+.numpad-layout-switch {
+  margin-top: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 27px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  transition: 0.4s;
+  border-radius: 24px;
+  border: 0.1px solid #5c4033;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #5c4033;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.numpad-layout-switch input:checked + .slider {
+}
+
+.numpad-layout-switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+.numpad-layout-switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* RWD */
+@media screen and (max-width: 486px) {
+  .wrap {
+    width: 95vw;
+    display: block;
+  }
+
+  .input-container {
+    width: 95%;
+    display: flex;
+  }
+  input {
+    width: 50%;
+    height: 50px;
+    border: none;
+    background-color: #f9f3ee;
+    font-size: 35px;
+  }
+
+  .keyboard-container {
+    width: 95%;
+  }
+
+  .keyboard {
+    width: 32%;
+    margin: 0;
+  }
+
+  .keyboard:hover {
+    background: inherit;
+    transform: translate(0);
+  }
+
+  button {
+    color: #000;
+    border: 0.5px solid #5c4033;
+  }
+
+  button:hover {
+    background: inherit;
+    transform: translate(0);
+  }
+
+  #guess,
+  #random {
+    width: 25%;
+    font-size: 15px;
+  }
+
+  .guessed:hover {
+    background: #97c4b8;
+    transform: translate(0);
+  }
+  #back:hover,
+  #reset:hover {
+    background: transparent;
+    transform: translate(0);
+  }
+  ul {
+    text-align: center;
+  }
+
+  li {
+    width: 100%;
+  }
+}
